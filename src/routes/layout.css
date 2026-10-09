@@ -1,3 +1,59 @@
 @import "tailwindcss";
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+/*
+ * Theme tokens
+ *
+ * Layer 1: primitives  — --hue drives every colour; change it to change the feel.
+ * Layer 2: semantic    — what a colour is FOR. Each token holds both modes via light-dark().
+ * Layer 3: tailwind    — @theme inline exposes them as utilities (bg-background, text-primary, …).
+ *
+ * Components use only layer-3 utilities, never raw palette colours (zinc-800, indigo-600, …).
+ * Mode follows the OS via `color-scheme: light dark` (no JS). A manual toggle later only
+ * needs to set `color-scheme: light` or `dark` on <html>.
+ *
+ * Contrast (WCAG 2): every *-foreground on its pair, and primary/muted-foreground on
+ * background, are >= 4.5:1 in both modes.
+ */
+:root {
+  color-scheme: light dark;
+
+  --hue: 265; /* indigo; avoid green/red — on a trading site those mean up/down */
+
+  /* light-dark(<light>, <dark>) */
+  --background: light-dark(oklch(0.99 0.002 var(--hue)), oklch(0.17 0.006 var(--hue)));
+  --foreground: light-dark(oklch(0.21 0.01 var(--hue)), oklch(0.96 0.004 var(--hue)));
+
+  --muted: light-dark(oklch(0.965 0.004 var(--hue)), oklch(0.23 0.008 var(--hue)));
+  --muted-foreground: light-dark(oklch(0.5 0.012 var(--hue)), oklch(0.72 0.01 var(--hue)));
+
+  --primary: light-dark(oklch(0.51 0.2 var(--hue)), oklch(0.68 0.16 var(--hue)));
+  --primary-foreground: light-dark(oklch(0.99 0 0), oklch(0.17 0.02 var(--hue)));
+
+  --border: light-dark(oklch(0.91 0.006 var(--hue)), oklch(0.3 0.01 var(--hue)));
+  --ring: var(--primary);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+}
+
+@layer base {
+  *,
+  ::before,
+  ::after {
+    @apply border-border;
+  }
+
+  html {
+    @apply bg-background text-foreground antialiased;
+  }
+}
