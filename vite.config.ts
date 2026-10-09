@@ -3,6 +3,7 @@ import { enhancedImages } from "@sveltejs/enhanced-img";
 import tailwindcss from "@tailwindcss/vite";
 import adapter from "@sveltejs/adapter-vercel";
 import { sveltekit } from "@sveltejs/kit/vite";
+import Icons from "unplugin-icons/vite";
 import { defineConfig, lazyPlugins } from "vite-plus";
 
 export default defineConfig({
@@ -30,5 +31,6 @@ export default defineConfig({
       extensions: [".svelte", ".svx", ".md"],
       experimental: { remoteFunctions: true, forkPreloads: true },
     }),
+    Icons({ compiler: "svelte" }),
   ]),
 });

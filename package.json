@@ -24,6 +24,8 @@
     "auth:schema": "auth generate --config src/lib/server/auth.ts --output src/lib/server/db/auth.schema.ts --yes"
   },
   "devDependencies": {
+    "@iconify-json/lucide": "^1.2.141",
+    "@iconify-json/simple-icons": "^1.2.99",
     "@playwright/test": "^1.60.0",
     "@sveltejs/adapter-vercel": "^7.0.0",
     "@sveltejs/enhanced-img": "^1.0.0",
@@ -43,6 +45,7 @@
     "svelte-check": "^4.6.0",
     "tailwindcss": "^4.3.0",
     "typescript": "^6.0.3",
+    "unplugin-icons": "^24.0.0",
     "vite": "catalog:",
     "vite-plus": "catalog:"
   },
