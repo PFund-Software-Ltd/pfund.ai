@@ -24,7 +24,7 @@
       {/if}
     </button>
   </div>
-  <pre class="overflow-x-auto p-4 font-mono text-md font-medium"><code
+  <pre class="overflow-x-auto p-4 font-mono font-medium"><code
       >{#each commands as command (command)}<span class="block"
           ><span class="select-none text-primary">$ </span>{command}</span
         >{/each}</code

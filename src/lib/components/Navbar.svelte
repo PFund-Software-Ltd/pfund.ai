@@ -11,7 +11,7 @@
       </span>
       <span class="font-['Newsreader'] font-bold [text-box:trim-both_cap_alphabetic]">PFund</span>
     </a>
-    <!-- TODO: re-enable when ready -->
+    <!-- TODO: re-enable when ready; won't fit on mobile -> hidden md:flex + burger menu (md:hidden) -->
     <!-- <ul class="flex items-center gap-12 font-medium text-foreground/80 *:hover:text-foreground">
       <li><a href="/templates">Templates</a></li>
       <li><a href="/skills">Skills</a></li>
