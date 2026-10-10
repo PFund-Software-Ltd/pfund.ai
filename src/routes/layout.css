@@ -46,6 +46,11 @@
   --color-ring: var(--ring);
 }
 
+@theme {
+  --font-display: "Fira Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
 @layer base {
   *,
   ::before,
