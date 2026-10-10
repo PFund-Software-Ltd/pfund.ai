@@ -1,5 +1,6 @@
 import type { User, Session } from "better-auth";
 import "unplugin-icons/types/svelte";
+import type { Theme } from "#lib/theme.ts";
 
 // See https://svelte.dev/docs/kit/types#app.d.ts
 // for information about these interfaces
@@ -8,6 +9,7 @@ declare global {
     interface Locals {
       user?: User;
       session?: Session;
+      theme: Theme;
     }
 
     // interface Error {}

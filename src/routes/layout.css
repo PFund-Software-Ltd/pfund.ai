@@ -7,7 +7,7 @@
  *
  * Layer 1: primitives  — --hue drives every colour; change it to change the feel.
  * Layer 2: semantic    — what a colour is FOR. Each token holds both modes via light-dark().
- * Layer 3: tailwind    — @theme inline exposes them as utilities (bg-background, text-primary, …).
+ * Layer 3: tailwind    — "@theme" inline exposes them as utilities (bg-background, text-primary, …).
  *
  * Components use only layer-3 utilities, never raw palette colours (zinc-800, indigo-600, …).
  * Mode follows the OS via `color-scheme: light dark` (no JS). A manual toggle later only

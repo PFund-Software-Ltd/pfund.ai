@@ -3,13 +3,18 @@
 	import DemoLinks from './demo/DemoLinks.svelte';
 	import favicon from '#lib/assets/favicon.svg';
 	import type { LayoutProps } from './$types';
+  import Navbar from '#lib/components/Navbar.svelte';
 
 	let { children }: LayoutProps = $props();
 </script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,200..800&display=swap" />
 </svelte:head>
 
-{@render children()}
+<Navbar />
+<main>
+  {@render children()}
+</main>
 <DemoLinks />

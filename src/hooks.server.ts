@@ -1,4 +1,5 @@
 import type { Handle } from "@sveltejs/kit/hooks";
+import { THEME_COOKIE, parseTheme } from "#lib/theme.ts";
 // TEMP: auth disabled until Better Auth is set up properly
 // import { building } from "$app/env";
 // import { auth } from "#lib/server/auth.ts";
@@ -16,4 +17,13 @@ import type { Handle } from "@sveltejs/kit/hooks";
 // };
 
 // export const handle: Handle = handleBetterAuth;
-export const handle: Handle = ({ event, resolve }) => resolve(event);
+// put the saved theme into <html> before it's sent, so there's no flash
+export const handle: Handle = ({ event, resolve }) => {
+  const theme = parseTheme(event.cookies.get(THEME_COOKIE));
+  event.locals.theme = theme;
+
+  return resolve(event, {
+    transformPageChunk: ({ html }) =>
+      html.replace("%theme.style%", theme === "system" ? "" : `color-scheme: ${theme}`),
+  });
+};
