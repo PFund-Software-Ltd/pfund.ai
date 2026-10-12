@@ -23,6 +23,9 @@
     "db:studio": "drizzle-kit studio",
     "auth:schema": "auth generate --config src/lib/server/auth.ts --output src/lib/server/db/auth.schema.ts --yes"
   },
+  "dependencies": {
+    "shiki": "^4.5.0"
+  },
   "devDependencies": {
     "@iconify-json/lucide": "^1.2.141",
     "@iconify-json/simple-icons": "^1.2.99",
