@@ -8,7 +8,8 @@
   const AGENT_SUGGESTION = "BUY 0.25 BTC";
 </script>
 
-<figure class="flex flex-col rounded-xl border bg-background">
+<!-- lg:self-stretch: fill the hero row (the grid centers items) so it matches the LHS height -->
+<figure class="flex flex-col rounded-xl border bg-background lg:self-stretch">
   <div class="flex items-center justify-between border-b px-4 py-2 text-sm text-muted-foreground">
     <span>AlphaFund · concept preview</span>
     <span class="flex items-center gap-2 font-mono text-xs uppercase tracking-wider">
@@ -17,7 +18,8 @@
     </span>
   </div>
 
-  <ol class="flex flex-col gap-5 p-5 lg:p-6" aria-hidden="true">
+  <!-- flex-1 + justify-evenly: the steps spread out to fill the taller box (gap-6 = minimum spacing on mobile) -->
+  <ol class="flex flex-1 flex-col justify-evenly gap-6 p-6 lg:p-10" aria-hidden="true">
     <!-- 1. the strategy pauses and asks for approval -->
     <li class="step step-strategy">
       <p class="label">▸ Strategy <span class="text-foreground normal-case tracking-normal">{STRATEGY}</span></p>

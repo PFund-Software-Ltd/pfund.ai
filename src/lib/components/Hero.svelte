@@ -52,11 +52,9 @@
             Coming soon — run your own AI-powered fund.
           {/if}
         </p>
+        <p class="mt-3 text-xl lg:text-2xl text-pretty font-bold">Your money deserves more than a chat window.</p>
         <p class="text-xl lg:text-2xl text-pretty font-bold">Be Your Own Fund Manager.</p>
-        <!--
-          answers "do I need another AI subscription?" up front
-          TODO: before launch, confirm Anthropic's and OpenAI's terms allow advertising "use your Claude / ChatGPT subscription"
-        -->
+        <!-- answers "do I need another AI subscription?" up front -->
         <p class="mt-2 text-muted-foreground text-pretty">Reuse your Claude or ChatGPT subscription — no extra AI bill.</p>
       </div>
 
