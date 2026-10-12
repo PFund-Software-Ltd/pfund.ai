@@ -3,7 +3,8 @@
     import ThemeToggle from "./ThemeToggle.svelte";
 </script>
 
-<header>
+<!-- pinned to the top; translucent + blur so content scrolling underneath doesn't clash with it -->
+<header class="sticky top-0 z-50 bg-background/80 backdrop-blur-md">
   <nav class="max-w-380 mx-auto p-4 flex items-center justify-between">
     <a href="/" class="flex items-center gap-2 text-2xl">
       <span class="grid size-[1.25em] place-items-center rounded-[0.25em] bg-foreground text-background">
