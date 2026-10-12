@@ -53,6 +53,11 @@
           {/if}
         </p>
         <p class="text-xl lg:text-2xl text-pretty font-bold">Be Your Own Fund Manager.</p>
+        <!--
+          answers "do I need another AI subscription?" up front
+          TODO: before launch, confirm Anthropic's and OpenAI's terms allow advertising "use your Claude / ChatGPT subscription"
+        -->
+        <p class="mt-2 text-muted-foreground text-pretty">Reuse your Claude or ChatGPT subscription — no extra AI bill.</p>
       </div>
 
       <div class="flex flex-wrap gap-4">
