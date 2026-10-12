@@ -17,9 +17,9 @@
     <!-- TODO: once the pages below are live this won't fit on mobile -> hidden md:flex + burger menu (md:hidden) -->
     <ul class="flex items-center gap-12 font-medium text-foreground/80 *:hover:text-foreground">
       <!-- TODO: re-enable when ready -->
-      <!-- <li><a href="/templates">Templates</a></li>
-      <li><a href="/skills">Skills</a></li>
-      <li><a href="/datasets">Datasets</a></li> -->
+      <!-- <li><a href="/skills">Skills</a></li> -->
+      <li><a href="/templates">Templates</a></li>
+      <li><a href="/datasets">Datasets</a></li>
       <li><NavDropdown label="Resources" items={RESOURCES} /></li>
     </ul>
     <div class="flex items-center gap-2 font-medium text-foreground/80 *:hover:text-foreground">
