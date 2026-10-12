@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Component } from "svelte";
   import type { SvelteHTMLElements } from "svelte/elements";
-  import alphafundLogo from "#lib/assets/alphafund-logo.svg";
+  import alphafundLogo from "#lib/assets/logos/alphafund.svg";
   import Github from "~icons/simple-icons/github";
   import Discord from "~icons/simple-icons/discord";
   import ChevronRight from "~icons/lucide/chevron-right";
