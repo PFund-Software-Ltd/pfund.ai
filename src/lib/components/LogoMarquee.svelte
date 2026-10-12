@@ -35,10 +35,10 @@
   </ul>
 {/snippet}
 
-<section class="max-w-380 mx-auto px-4 pt-8 lg:pt-12">
+<section class="max-w-380 mx-auto px-4 pt-16 lg:pt-36">
   <!-- bold headline, honest subline: not every logo is fully supported yet. TODO: "See integration status →" link once docs exist -->
-  <h2 class="text-center text-2xl font-bold text-foreground">One app to trade them all</h2>
-  <p class="mt-2 text-center text-sm text-muted-foreground">
+  <h2 class="font-display text-center text-[2rem] lg:text-[2.4rem] font-extrabold leading-[1.1] tracking-tight text-foreground">One app to trade them all</h2>
+  <p class="mt-3 text-center text-base text-muted-foreground">
     AlphaFund brings your exchanges, brokers and data providers together, with more added every release.
   </p>
 

@@ -24,7 +24,7 @@
   </a>
 {/snippet}
 
-<section class="max-w-380 mx-auto px-4 pb-4 pt-16 lg:pt-28">
+<section class="max-w-380 mx-auto px-4 pb-4 pt-16 lg:pt-32">
   <!--
     always-dark card: tokens use light-dark(), so color-scheme:dark flips them to dark values here.
     bg-muted (not bg-background) so the card still stands out from the page in dark mode.

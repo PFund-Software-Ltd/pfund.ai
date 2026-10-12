@@ -105,7 +105,7 @@
 </script>
 
 <!-- full-bleed band: separates the hero from the sections below. TODO: placeholder spacing -->
-<section class="relative scheme-dark bg-muted text-foreground border-b border-foreground/10 mt-12 lg:mt-20" {@attach boot}>
+<section class="relative scheme-dark bg-muted text-foreground border-b border-foreground/10 mt-20 lg:mt-36" {@attach boot}>
   <!-- glowing top edge: a soft seam from the hero instead of a hard cut -->
   <div class="seam-line absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-linear-to-r from-transparent via-primary to-transparent"></div>
   <!-- glow spills down into the band only, so it reads the same on a light or dark page -->
