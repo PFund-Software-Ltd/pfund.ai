@@ -8,7 +8,10 @@ import { createJavaScriptRegexEngine } from "shiki/engine/javascript";
 // fine-grained imports: only the grammars/themes we use, not shiki's full bundle
 const highlighter = createHighlighterCore({
   langs: [import("shiki/langs/python.mjs")],
-  themes: [import("shiki/themes/one-light.mjs"), import("shiki/themes/one-dark-pro.mjs")],
+  themes: [
+    import("shiki/themes/catppuccin-latte.mjs"),
+    import("shiki/themes/catppuccin-mocha.mjs"),
+  ],
   engine: createJavaScriptRegexEngine(),
 });
 
@@ -20,7 +23,9 @@ export const highlight = query("unchecked", async (code: string) => {
 
   return (await highlighter).codeToHtml(code, {
     lang: "python",
-    themes: { light: "one-light", dark: "one-dark-pro" },
+    // a matched pair that colours calls (pf.BacktestEngine(), .run()) in both modes;
+    // VS Code/GitHub themes leave them plain (VS Code colours them via Pylance, which shiki doesn't have)
+    themes: { light: "catppuccin-latte", dark: "catppuccin-mocha" },
     // emit `color: light-dark(...)`, so it follows the page's color-scheme like the rest of the site
     defaultColor: "light-dark()",
   });
