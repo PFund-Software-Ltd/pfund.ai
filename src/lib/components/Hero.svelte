@@ -78,7 +78,7 @@
                 ><Star
                   class="inline size-4 align-[-0.125em] text-primary transition-[fill] group-hover:fill-current"
                   aria-hidden="true"
-                /> star on GitHub to get notified</a
+                /> star on GitHub to follow along</a
               ></span
             >
           {/snippet}
