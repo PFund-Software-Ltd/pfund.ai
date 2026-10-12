@@ -35,7 +35,7 @@
   </ul>
 {/snippet}
 
-<section class="max-w-380 mx-auto px-4 pt-16 lg:pt-36">
+<section class="max-w-380 mx-auto px-4 pt-12 lg:pt-28">
   <!-- bold headline, honest subline: not every logo is fully supported yet. TODO: "See integration status →" link once docs exist -->
   <h2 class="font-display text-center text-[2rem] lg:text-[2.4rem] font-extrabold leading-[1.1] tracking-tight text-foreground">One app to trade them all</h2>
   <p class="mt-3 text-center text-base text-muted-foreground">

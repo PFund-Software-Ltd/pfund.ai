@@ -5,6 +5,7 @@
   import Github from "~icons/simple-icons/github";
   import Linkedin from "~icons/simple-icons/linkedin";
   import ArrowUpRight from "~icons/lucide/arrow-up-right";
+  import { RESOURCES } from "#lib/links.ts";
 
   type FooterLink = {
     label: string;
@@ -28,11 +29,7 @@
     },
     {
       title: "Resources",
-      links: [
-        { label: "pfund", href: "https://pfund.pfund.ai" },
-        { label: "pfeed", href: "https://pfeed.pfund.ai" },
-        { label: "pytrade.org", href: "https://pytrade.org" },
-      ],
+      links: RESOURCES, // shared with the navbar dropdown
     },
     // TODO: company section (about, contact, legal...) once those pages exist
     // {
