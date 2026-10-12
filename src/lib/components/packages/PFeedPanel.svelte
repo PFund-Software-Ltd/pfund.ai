@@ -46,6 +46,9 @@ result = (
     },
   ];
 
+  const REPO = "https://github.com/PFund-Software-Ltd/pfeed";
+  const WEBSITE: string | null = "https://pfeed.pfund.ai";
+
   let active = $state(0);
 </script>
 
@@ -58,7 +61,8 @@ result = (
       title="Any provider, your own data lakehouse"
       description="Download, stream and store market data from different providers through one API."
       install="pip install pfeed"
-      repo="https://github.com/PFund-Software-Ltd/pfeed"
+      repo={REPO}
+      website={WEBSITE}
     >
       <!-- the active feature, explaining the code on the left (same stacking as PFundPanel) -->
       <div class="grid grid-cols-1">

@@ -51,6 +51,9 @@ engine.run()`,
     },
   ];
 
+  const REPO = "https://github.com/PFund-Software-Ltd/pfund";
+  const WEBSITE: string | null = "https://pfund.pfund.ai";
+
   let active = $state(0);
 </script>
 
@@ -63,7 +66,8 @@ engine.run()`,
       title="Write once, trade anywhere"
       description="Backtest and trade live with the same code, on any venue pfund connects to."
       install='pip install "pfund[core,torch]"'
-      repo="https://github.com/PFund-Software-Ltd/pfund"
+      repo={REPO}
+      website={WEBSITE}
     >
       <!-- the active feature, explaining the code on the left.
            Same stacking as FeatureCode: every card shares one grid cell, so a longer description doesn't shift the layout. -->
@@ -80,4 +84,3 @@ engine.run()`,
     </PackageIntro>
   {/snippet}
 </SplitPanel>
-
