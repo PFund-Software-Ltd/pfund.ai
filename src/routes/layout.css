@@ -10,8 +10,8 @@
  * Layer 3: tailwind    — "@theme" inline exposes them as utilities (bg-background, text-primary, …).
  *
  * Components use only layer-3 utilities, never raw palette colours (zinc-800, indigo-600, …).
- * Mode follows the OS via `color-scheme: light dark` (no JS). A manual toggle later only
- * needs to set `color-scheme: light` or `dark` on <html>.
+ * `color-scheme: light dark` here = follow the OS ("system"). The default is dark though:
+ * hooks.server.ts sets `color-scheme: dark` on <html> unless the cookie says otherwise.
  *
  * Contrast (WCAG 2): every *-foreground on its pair, and primary/muted-foreground on
  * background, are >= 4.5:1 in both modes.
