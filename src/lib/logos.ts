@@ -20,7 +20,6 @@ export const LOGOS: Logo[] = [
   { id: "bybit", name: "Bybit", logo: bybit, scale: 0.7 },
   { id: "okx", name: "OKX", logo: okx, scale: 0.6 },
   { id: "hyperliquid", name: "Hyperliquid", logo: hyperliquid },
-  { id: "hydromancer", name: "Hydromancer", logo: hydromancer, scale: 1.2 },
   { id: "alpaca", name: "Alpaca", logo: alpaca },
   { id: "databento", name: "Databento", logo: databento },
 ];
