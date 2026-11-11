@@ -1,6 +1,6 @@
 export type Theme = "system" | "light" | "dark";
 
-export const THEME_COOKIE = "theme";
+export const THEME_COOKIE = "pfund-theme";
 
 // the landing page is designed dark-first, so anything unknown (or no cookie) = dark
 export const DEFAULT_THEME: Theme = "dark";
