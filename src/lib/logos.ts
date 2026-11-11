@@ -4,7 +4,6 @@ import alpaca from "#lib/assets/logos/alpaca.svg?raw";
 import binance from "#lib/assets/logos/binance.svg?raw";
 import bybit from "#lib/assets/logos/bybit.svg?raw";
 import databento from "#lib/assets/logos/databento.svg?raw";
-import hydromancer from "#lib/assets/logos/hydromancer.svg?raw";
 import hyperliquid from "#lib/assets/logos/hyperliquid.svg?raw";
 import okx from "#lib/assets/logos/okx.svg?raw";
 
