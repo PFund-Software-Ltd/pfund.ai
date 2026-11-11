@@ -27,7 +27,7 @@
 
   const uid = $props.id(); // unique per instance, for tab ↔ panel aria ids
   let active = $state(0);
-  const tabs: HTMLButtonElement[] = [];
+  const tabs: HTMLButtonElement[] = $state([]);
 
   // ARIA tabs pattern: arrow keys move between tabs, Home/End jump to the ends
   function onkeydown(e: KeyboardEvent) {
