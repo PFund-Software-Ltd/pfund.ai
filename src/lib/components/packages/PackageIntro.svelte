@@ -14,6 +14,7 @@
     repo,
     website = null,
     children,
+    installNote,
   }: {
     title: string;
     description: string;
@@ -21,6 +22,7 @@
     repo: string;
     website?: string | null; // the package's own project website; null = no button
     children?: Snippet; // optional extras between the copy and the install command, e.g. the active feature card
+    installNote?: Snippet; // optional small print under the install command, e.g. what the pip extras are
   } = $props();
 </script>
 
@@ -54,5 +56,12 @@
     <p class="mt-2 text-lg text-muted-foreground text-pretty">{description}</p>
   </div>
   {@render children?.()}
-  <Terminal commands={[install]} />
+  <div>
+    <Terminal commands={[install]} />
+    {#if installNote}
+      <div class="mt-3 px-1 text-sm text-muted-foreground">
+        {@render installNote()}
+      </div>
+    {/if}
+  </div>
 </div>

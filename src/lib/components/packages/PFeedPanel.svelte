@@ -1,5 +1,5 @@
 <script lang="ts">
-  // pfeed tab. TODO: placeholder copy and code (pfeed API not finalized)
+  // pfeed tab
   import SplitPanel from "./SplitPanel.svelte";
   import PackageIntro from "./PackageIntro.svelte";
   import FeatureCode, { type Feature } from "./FeatureCode.svelte";
@@ -15,33 +15,32 @@
 
 bybit = pe.Bybit()
 feed = bybit.market_feed
+
 result = feed.download(
-    "BTC_USDT_PERP",
-    resolution="1m",
-    start_date="2024-01-01",
+    product="BTC_USDT_PERP",  # or BTC_USDT_PERPETUAL in full
+    resolution="1minute",  # '1tick'/'1t' or '2second'/'2s' etc.
+    start_date="2026-01-01",
+    end_date="2026-01-01",
     io=pe.DuckLakeIO(),  # store it in your local data lakehouse
 )
-df = result.data  # backtest-ready data`,
+df = result.data.collect()`,
     },
     {
-      name: "Data pipelines with your own functions",
+      name: "Live data, stored as it streams",
       description:
-        "Chain download, transform and load into one pipeline. Plug in any Python function to shape the data, then save the result to your lakehouse.",
-      file: "pipeline.py",
+        "Stream real-time market data through the same interface, handle each message with your own callback, and store everything in your local data lakehouse as it arrives.",
+      file: "stream.py",
       code: `import pfeed as pe
-import polars as pl
 
-def add_returns(df: pl.LazyFrame) -> pl.LazyFrame:
-    return df.with_columns(pl.col("close").pct_change().alias("returns"))
-
-bybit = pe.Bybit(pipeline_mode=True)
+bybit = pe.Bybit()
 feed = bybit.market_feed
-result = (
-    feed
-    .download("BTC_USDT_PERP", resolution="1m", start_date="2024-01-01")
-    .transform(add_returns)  # your own function
-    .load(pe.DuckLakeIO(), data_layer="curated")
-    .run()
+
+feed.stream(
+    product="BTC_USDT_CRYPTO",
+    resolution="1tick",  # or just 'tick' for tick data
+    # only DuckLake supports storing streamed data for now, set it to None to skip storing
+    io=pe.DuckLakeIO(),
+    callback=lambda msg: print(msg),
 )`,
     },
   ];
@@ -60,7 +59,7 @@ result = (
     <PackageIntro
       title="Any provider, your own data lakehouse"
       description="Download, stream and store market data from different providers through one API."
-      install="pip install pfeed"
+      install={'pip install "pfeed[bybit,ray]"'}
       repo={REPO}
       website={WEBSITE}
     >
@@ -75,6 +74,12 @@ result = (
           </div>
         {/each}
       </div>
+      {#snippet installNote()}
+        <ul class="space-y-1">
+          <li><code class="font-mono text-foreground">bybit</code>: your data source (a crypto exchange), swap in the one you need</li>
+          <li><code class="font-mono text-foreground">ray</code>: parallel processing (recommended)</li>
+        </ul>
+      {/snippet}
     </PackageIntro>
   {/snippet}
 </SplitPanel>
