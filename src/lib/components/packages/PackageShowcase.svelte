@@ -103,8 +103,8 @@
     inset-inline: 0;
     bottom: -1px;
     height: 2px;
-    background: var(--color-primary);
-    box-shadow: 0 0 8px var(--color-primary);
+    background: var(--primary);
+    box-shadow: 0 0 8px var(--primary);
     opacity: 0;
     transition: opacity 0.2s;
   }

@@ -22,7 +22,19 @@
   color-scheme: light dark;
 
   --hue: 265; /* indigo; avoid green/red — on a trading site those mean up/down */
+}
 
+/*
+ * Tokens are re-declared on .scheme-* elements (e.g. the always-dark hero) because the build
+ * rewrites light-dark() into var(--lightningcss-*), and a var() inside a custom property is
+ * resolved where it's DECLARED — so tokens declared only on :root would keep the page's mode.
+ * color-scheme must NOT go here: this block is unlayered and would beat the scheme-* utilities.
+ * Same trap in component <style>: use var(--primary), NOT var(--color-primary) — Tailwind
+ * declares --color-* only on :root, so they'd keep the page's mode inside a scheme-* section.
+ */
+:root,
+.scheme-dark,
+.scheme-light {
   /* light-dark(<light>, <dark>) */
   --background: light-dark(oklch(0.99 0.002 var(--hue)), oklch(0.17 0.006 var(--hue)));
   --foreground: light-dark(oklch(0.21 0.01 var(--hue)), oklch(0.96 0.004 var(--hue)));

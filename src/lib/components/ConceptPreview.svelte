@@ -68,7 +68,7 @@
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: var(--color-muted-foreground);
+    color: var(--muted-foreground);
   }
 
   /* one 12s loop: strategy at 0s → agent typing at ~1.5s → reply at ~3s → you at ~4.5s → hold → fade out */
@@ -122,7 +122,7 @@
     width: 6px;
     height: 6px;
     border-radius: 9999px;
-    background: var(--color-muted-foreground);
+    background: var(--muted-foreground);
     animation: bounce 0.9s ease-in-out infinite;
   }
   .typing span:nth-child(2) {
@@ -142,7 +142,7 @@
   }
   @keyframes glow {
     0%, 100% { box-shadow: 0 0 0 0 transparent; }
-    50% { box-shadow: 0 0 14px 2px color-mix(in oklch, var(--color-primary) 60%, transparent); }
+    50% { box-shadow: 0 0 14px 2px color-mix(in oklch, var(--primary) 60%, transparent); }
   }
 
   .live-dot {
