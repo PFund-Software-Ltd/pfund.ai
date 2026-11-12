@@ -4,6 +4,7 @@
   import Discord from "~icons/simple-icons/discord";
   import Github from "~icons/simple-icons/github";
   import Linkedin from "~icons/simple-icons/linkedin";
+  import X from "~icons/simple-icons/x";
   import ArrowUpRight from "~icons/lucide/arrow-up-right";
   import { RESOURCES } from "#lib/links.ts";
 
@@ -39,6 +40,7 @@
     {
       title: "Social",
       links: [
+        { label: "X", href: "https://x.com/PFund_AI", icon: X },
         { label: "Discord", href: "https://discord.gg/vqpS94tpdp", icon: Discord },
         { label: "GitHub", href: "https://github.com/PFund-Software-Ltd", icon: Github },
         { label: "LinkedIn", href: "https://www.linkedin.com/company/pfund-software-ltd/", icon: Linkedin },

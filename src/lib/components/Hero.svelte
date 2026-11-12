@@ -4,14 +4,19 @@
   import alphafundLogo from "#lib/assets/logos/alphafund.svg";
   import Github from "~icons/simple-icons/github";
   import Discord from "~icons/simple-icons/discord";
+  import X from "~icons/simple-icons/x";
   import ChevronRight from "~icons/lucide/chevron-right";
-  import Star from "~icons/lucide/star";
+  // TEMP: unused while the terminal CTA points to X; restore with the "star on GitHub" link when AlphaFund is public
+  // import Star from "~icons/lucide/star";
   import Terminal from "./Terminal.svelte";
   import ConceptPreview from "./ConceptPreview.svelte";
   import { ALPHAFUND_READY } from "#lib/config.ts";
 
   const GITHUB_URL = "https://github.com/PFund-Software-Ltd/AlphaFund";
   const DISCORD_URL = "https://discord.gg/vqpS94tpdp";
+  const X_URL = "https://x.com/PFund_AI";
+  // TEMP: pre-launch stand-in for GITHUB_URL (the AlphaFund repo is private). Remove once ALPHAFUND_READY.
+  const GITHUB_ORG_URL = "https://github.com/PFund-Software-Ltd/";
 </script>
 
 {#snippet pill(href: string, Icon: Component<SvelteHTMLElements["svg"]>, label: string)}
@@ -59,7 +64,13 @@
       </div>
 
       <div class="flex flex-wrap gap-4">
-        {@render pill(GITHUB_URL, Github, "GitHub")}
+        <!-- pre-launch: the repo is private (404 for visitors), so GitHub points to the org page, plus X for updates -->
+        {#if ALPHAFUND_READY}
+          {@render pill(GITHUB_URL, Github, "GitHub")}
+        {:else}
+          {@render pill(GITHUB_ORG_URL, Github, "GitHub")}
+          {@render pill(X_URL, X, "X")}
+        {/if}
         {@render pill(DISCORD_URL, Discord, "Discord")}
       </div>
 
@@ -71,17 +82,18 @@
           {#snippet pending()}
             building alphafund… in development
             <!-- pl-[2ch]: lines up under the text, past the spinner + space -->
-            <!-- the call to action: links to the repo; the star fills on hover -->
+            <!-- what's being built, so the logo + headline aren't read as "AlphaFund = a community". TODO: placeholder copy -->
+            <span class="block pl-[2ch] text-muted-foreground"
+              >AlphaFund is an app where AI agents help you build and run trading strategies.</span
+            >
+            <!-- the call to action: links to X (the repo is private pre-launch, a 404 for visitors) -->
             <span class="block pl-[2ch]"
               ><a
-                href={GITHUB_URL}
+                href={X_URL}
                 target="_blank"
                 rel="noreferrer"
-                class="group rounded-sm text-foreground underline decoration-primary/50 underline-offset-4 outline-none transition-colors hover:decoration-primary focus-visible:ring-2 focus-visible:ring-ring"
-                ><Star
-                  class="inline size-4 align-[-0.125em] text-primary transition-[fill] group-hover:fill-current"
-                  aria-hidden="true"
-                /> star on GitHub to follow along</a
+                class="rounded-sm text-foreground underline decoration-primary/50 underline-offset-4 outline-none transition-colors hover:decoration-primary focus-visible:ring-2 focus-visible:ring-ring"
+                ><X class="inline size-4 align-[-0.125em] text-primary" aria-hidden="true" /> follow on X for updates</a
               ></span
             >
           {/snippet}
