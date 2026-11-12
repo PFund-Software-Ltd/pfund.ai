@@ -21,7 +21,7 @@
 
   function setTheme(value: Theme) {
     theme = value;
-    document.documentElement.style.colorScheme = value === "system" ? "" : value;
+    document.documentElement.dataset.theme = value;
     // always save, incl. "system": no cookie now means DEFAULT_THEME
     document.cookie = `${THEME_COOKIE}=${value}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`;
   }

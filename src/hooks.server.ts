@@ -23,7 +23,6 @@ export const handle: Handle = ({ event, resolve }) => {
   event.locals.theme = theme;
 
   return resolve(event, {
-    transformPageChunk: ({ html }) =>
-      html.replace("%theme.style%", theme === "system" ? "" : `color-scheme: ${theme}`),
+    transformPageChunk: ({ html }) => html.replace("%theme%", theme),
   });
 };

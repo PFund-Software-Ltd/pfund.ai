@@ -11,7 +11,9 @@
  *
  * Components use only layer-3 utilities, never raw palette colours (zinc-800, indigo-600, …).
  * `color-scheme: light dark` here = follow the OS ("system"). The default is dark though:
- * hooks.server.ts sets `color-scheme: dark` on <html> unless the cookie says otherwise.
+ * hooks.server.ts sets `data-theme="dark"` on <html> unless the cookie says otherwise.
+ * The mode is switched by [data-theme] rules, NOT an inline `color-scheme` style: the build
+ * (Tailwind → Lightning CSS) rewrites light-dark() into vars that only CSS rules can flip.
  *
  * Contrast (WCAG 2): every *-foreground on its pair, and primary/muted-foreground on
  * background, are >= 4.5:1 in both modes.
@@ -33,6 +35,14 @@
 
   --border: light-dark(oklch(0.91 0.006 var(--hue)), oklch(0.3 0.01 var(--hue)));
   --ring: var(--primary);
+}
+
+/* "system" matches neither → the :root rule above follows the OS */
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 @theme inline {
