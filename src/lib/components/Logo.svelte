@@ -4,9 +4,12 @@
   let props: SVGAttributes<SVGSVGElement> = $props();
 </script>
 
+<!-- width/height: fallback size (same 220:180 ratio) if CSS is late, so the logo can't flash full-width; CSS classes override them -->
 <svg
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 220 180"
+  width="22"
+  height="18"
   fill="currentColor"
   role="img"
   aria-label="PFund.ai"
