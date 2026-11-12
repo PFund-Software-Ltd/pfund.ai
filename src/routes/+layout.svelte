@@ -1,6 +1,7 @@
 <script lang="ts">
 	import './layout.css';
-	import DemoLinks from './demo/DemoLinks.svelte';
+	// TEMP: demo routes parked in .local/references/demo (see its README); restore with them
+	// import DemoLinks from './demo/DemoLinks.svelte';
 	import favicon from '#lib/assets/favicon.svg';
 	import type { LayoutProps } from './$types';
   import Navbar from '#lib/components/Navbar.svelte';
@@ -21,4 +22,5 @@
   {@render children()}
 </main>
 <Footer />
-<DemoLinks />
+<!-- TEMP: see the DemoLinks import above -->
+<!-- <DemoLinks /> -->
